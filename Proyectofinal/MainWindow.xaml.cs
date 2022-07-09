@@ -48,7 +48,9 @@ namespace Proyectofinal
                     {
 
                         Sistema sistema = new Sistema();
+                        Hide();
                         sistema.Show();
+                        
 
                     }
                     else

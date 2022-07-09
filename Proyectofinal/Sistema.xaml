@@ -7,7 +7,31 @@
         mc:Ignorable="d"
         Title="Sistema" Height="450" Width="800">
     <Grid>
-        <Label Content="BIENVENIDO AL SISTEMA X64" HorizontalAlignment="Left" Margin="72,183,0,0" VerticalAlignment="Top" FontSize="50" Background="Red"/>
+        <Label Content="BIENVENIDO AL SISTEMA X64" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="50" Background="Red"/>
 
+        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" Margin="42,133,24,54" IsSynchronizedWithCurrentItem="True" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}"/>
+                <DataGridTextColumn Header="Usuario" Binding="{Binding Users}"/>
+                <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
+
+                <DataGridTemplateColumn Header="Editar">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Edit" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Delete"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        
     </Grid>
 </Window>
